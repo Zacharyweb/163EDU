@@ -1,0 +1,868 @@
+@charset "utf-8";
+/* 页面初始化*/
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{font:12px/1.14  "Arial","Hiragino Sans GB","Microsoft YaHei", \5fae\8f6f\96c5\9ed1, "Helvetica", "sans-serif";color:#333;outline:0;}
+body{background:#fff;}
+a,a:hover{color:#333;}
+
+/*常用类*/
+.fl{float: left;}
+.fr{float: right;}
+.center{margin: 0 auto;}
+.cp{cursor: pointer;}
+.usn{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}
+.f-cb:after,.f-cbli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
+.f-cb,.f-cbli li{zoom:1;}
+
+@media screen and (max-width:1205px){
+	.Ed-wrap,#Ed_top,#Ed_banner,#Ed_product,#Ed_workplace,#Ed_content{
+		width: 1364px!important;
+	}
+	#Ed_top .center{
+		width: 957px!important;
+	}
+	#Ed_product .center{
+		width: 964px!important;
+	}
+	#Ed_product .center ul li{
+		width: 170px!important;
+	}
+	#Ed_product .center ul li.product1{	
+		margin-right: 69px!important;
+	}
+	#Ed_product .center ul li.product2{	
+		margin-right: 75px!important;
+	}
+	#Ed_product .center ul li.product3{
+		width: 170px!important;
+	}
+	#Ed_workplace ul{
+	margin-left:-121px!important;
+	}
+	#Ed_content .center{
+		width: 961px!important;
+	}
+	#Ed_content .center .course{
+		width: 735px!important;
+	}
+	#Ed_footer{
+		width: 1152px!important;
+		padding-left: 212px!important;
+	}
+	#Ed_footer .more-link{
+		margin-right: 205px!important;
+	}
+}
+
+/*@media screen and (min-width:1250px){
+	.g-hd .m-topnav .wrap,.g-hd .m-botnav{ width: 1200px;}
+	.g-bd .m-slide a{ width:1616px; margin:0 auto;}
+	.g-bd .m-slide img{ margin:0 -18px;}
+	.g-bd .g-top .m-product{width:1270px;}
+	.g-bd .m-product .m-wrap1{ width:339px; margin:0 42px;}
+	.g-bd .m-workplace .box{ width:1616px; margin:0 auto;}
+	.g-bd .g-bot{ width:1216px;}
+	.g-bd .g-bot .g-mn{ width:970px;}
+	}
+	
+	
+@media \0screen{  
+	.g-hd .m-topnav .wrap,.g-hd .m-botnav{ width: 1200px;}
+	.g-bd .m-slide a{ width:1616px; margin:0 auto;}
+	.g-bd .m-slide img{ margin:0 -18px;}
+	.g-bd .g-top .m-product{width:1270px;}
+	.g-bd .m-product .m-wrap1{ width:339px; margin:0 42px;}
+	.g-bd .m-workplace .box{ width:1616px; margin:0 auto;}
+	.g-bd .g-bot{ width:1216px;}
+	.g-bd .g-bot .g-mn{ width:970px;}
+	}
+
+.Ed-wrap,#Ed_top,#Ed_banner,#Ed_product,#Ed_workplace,#Ed_content{
+	width: 1364px;
+}
+#Ed_top .center,#Ed_product .center {
+	width: 957px;
+}
+#Ed_content .center{
+	width: 957px;
+}
+#Ed_content .center .course{
+	width: 735px;
+}
+#Ed_footer{
+	width: 1152px;
+	padding-left: 212px;
+}
+#Ed_footer .more-link{
+	margin-right: 205px;
+}*/
+
+/*整体面板大包装盒子*/
+.Ed-wrap{
+	width：1616px;
+	height: 100%;
+}
+/*点击登录时出现的mask*/
+.Ed-wrap #mask{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background:rgba(0,0,0,0.8);
+	display: none;
+	z-index: 900;
+}
+/*头部内容*/
+#Ed_top{
+	width: 1616px;
+}
+/*头部通知*/
+#Ed_top .top-bar{
+	width: 100%;
+	height: 36px;
+	background-color: #f3f3f3;
+}
+#Ed_top .top-bar .center{
+	width: 1202px;
+	height: 100%;
+}
+#Ed_top .top-bar .center .left{
+	float: left;
+	line-height: 36px;
+}
+#Ed_top .top-bar .center .left a{
+	color: #22a555;
+}
+#Ed_top .top-bar .center .right{
+	float: right;
+	line-height: 36px;
+	position: relative;
+	cursor: pointer;
+}
+#Ed_top .top-bar .center .right .close{
+	position: absolute;
+	top: 13px;
+	left: -15px;
+	width: 9px;
+	height: 9px;
+	background-color: yellow;
+	background: url(../images/spirit.png) no-repeat -284px -27px;
+}
+/*头部logo与导航部分*/
+#Ed_top .bot-bar{
+	height: 90px;
+	width: 100%;
+	background-color: #fff;
+}
+#Ed_top .bot-bar .center{
+	width: 1202px;
+	height: 100%;
+}
+#Ed_top .bot-bar .center .EDU-logo{
+	padding-top: 30px;	
+}
+#Ed_top .bot-bar .center .EDU-logo h2{
+	padding: 0 31px 0 84px;
+	font-size: 22px;
+	background: url(../images/spirit.png) no-repeat -223px 0;
+	color: #333;
+	font-weight: normal;
+}
+#Ed_top .bot-bar .center .login{
+	padding-top: 32px;
+	width: 200px;	
+}
+#Ed_top .bot-bar .center .login .attention{
+	color: #fff;
+	width: 54px;
+	height: 21px;
+	border: none;
+	border-radius: 2px;
+	padding-left: 13px;
+	background:#21a557 url(../images/spirit.png) no-repeat -36px 0;	
+	display: none;
+}
+
+#Ed_top .bot-bar .center .login .attention:hover{
+	background-color:#2fb556;	
+}
+#Ed_top .bot-bar .center .login .fans{
+	padding-left: 14px;
+	line-height:21px;
+}
+#Ed_top .bot-bar .center .login .followed{
+	display: block;
+	width: 82px;
+	height: 19px;
+	border: 1px solid #efefef;
+	border-radius: 2px;
+	font: 12px/19px "Microsoft YaHei";
+	color: #333;
+	padding-left: 22px;
+	background-color: #f8f8f8;	
+	position:relative;
+}
+#Ed_top .bot-bar .center .login .followed .icon{
+	position: absolute;
+	width: 11px;
+	height: 9px;
+	left: 5px;
+	top: 5px;
+	background: url(../images/spirit.png) no-repeat -111px -6px;
+}
+#Ed_top .bot-bar .center .login .followed .divider{
+	display: inline-block;
+	width: 1px;
+	height: 10px;
+	background-color: #ccc;
+	margin:0 8px;
+}
+#Ed_top .bot-bar .center .login .followed #unfollow{
+	font: 12px/19px "Microsoft YaHei";
+	color: #999999;
+}
+#Ed_top .bot-bar .center .login .followed #unfollow:hover{
+	color: #21a557;
+	text-decoration: underline;
+}
+/*登录窗口*/
+#Ed_top .bot-bar .center .login .dialog-box{
+	position:fixed;
+	width:347px; 
+	height:258px;
+	top: 50%;
+	left: 50%;
+    margin:-144px 0 0 -193px;
+    border:1px solid #ccc;
+    background-color: #fff;
+    padding: 30px 0 0 40px;
+    z-index: 999;
+    display: none;   
+}
+#Ed_top .bot-bar .center .login .dialog-box .close{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: url(../images/spirit.png) no-repeat -18px -10px;
+	top: 10px;
+	right: 10px;
+}
+#Ed_top .bot-bar .center .login .dialog-box h3{
+	font-size: 18px;
+	padding-bottom: 20px;
+}
+#Ed_top .bot-bar .center .login .dialog-box .username,
+#Ed_top .bot-bar .center .login .dialog-box .password{
+	padding-left: 12px;
+	background-color: #fafafa;
+	height: 42px;
+	width: 280px;
+	border: none;
+	box-shadow:inset 1px 1px 2px 1px #f1f1f1;
+	border-top: 1px solid #dfdfdf;
+	border-left: 1px solid #dfdfdf;
+	margin-bottom: 30px;
+}
+#Ed_top .bot-bar .center .login .dialog-box .text-box{
+	position:relative;
+}
+#Ed_top .bot-bar .center .login .dialog-box label{
+	position: absolute; 
+	top:10px; 
+	left:12px; 
+	font:16px 'Microsoft YaHei'; 
+	color:#cccccc;
+}
+#Ed_top .bot-bar .center .login .dialog-box .btn-submit{
+	display:block; 
+	width:293px; 
+	height:46px; 
+	border:none; 
+	box-shadow:1px 1px  0 1px #d5e3da; 
+	color: #fff;
+	background: url(../images/login.png) repeat-x;
+}
+/*头部导航部分*/
+#Ed_top .bot-bar .center .search{
+	width: 18px;
+	height: 18px;
+	background: url(../images/spirit.png) no-repeat 0 0;
+	margin: 35px 13px 0 30px;	
+}
+#Ed_top .bot-bar .center .search:hover{
+	background: url(../images/spirit.png) no-repeat 0 -18px;	
+}
+#Ed_top .bot-bar .center .top-nav li{
+	line-height: 90px;
+}
+#Ed_top .bot-bar .center .top-nav li a{
+	color: #8f8f8f;
+	font-size: 16px;
+}
+#Ed_top .bot-bar .center .top-nav li a:hover{
+	color: #39a030;
+}
+#Ed_top .bot-bar .center .top-nav li+li{
+	padding-left: 55px;
+}
+/*轮播大图部分*/
+#Ed_banner{
+	width: 1616px;
+}
+#Ed_banner #scroll-pic{
+	width: 100%;
+	height: 460px;
+	position: relative;
+}
+#Ed_banner #scroll-pic ul{
+
+}
+#Ed_banner #scroll-pic .banners li{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#Ed_banner #scroll-pic .banners li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#Ed_banner #scroll-pic .banners li.banner1{
+	background: url(../images/banner1.jpg) no-repeat center center;
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+#Ed_banner #scroll-pic .banners li.banner2{
+	background: url(../images/banner2.jpg) no-repeat center center;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+#Ed_banner #scroll-pic .banners li.banner3{
+	background: url(../images/banner3.jpg) no-repeat center center;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+/*轮播图控制小圆点*/
+#Ed_banner #scroll-pic .control{
+	position: absolute;
+	width: 52px;
+	height: 10px;
+	left: 50%;
+	margin-left:-26px;
+	bottom: 20px;
+	z-index: 20;
+}
+#Ed_banner #scroll-pic .control li{
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: #fff;
+}
+#Ed_banner #scroll-pic .control li+li{
+	margin-left: 11px;
+}
+#Ed_banner #scroll-pic .control li.active{
+	background-color: #333;
+}
+
+/*三大产品部分*/
+#Ed_product{
+	width: 1616px;
+	height: 295px;
+}
+#Ed_product .center{
+	width: 1202px;
+	height: 235px;
+	padding-top: 60px;
+}
+#Ed_product .center ul li{
+	width: 240px;
+	padding-left:100px;
+	margin-right: 80px;
+	position: relative;
+}
+#Ed_product .center ul li span{
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	top: 5px;
+	left: 0px;
+}
+#Ed_product .center ul li.product1 span{
+	background: url(../images/spirit.png) no-repeat 0 -83px;
+}
+#Ed_product .center ul li.product2 span{
+	background: url(../images/spirit.png) no-repeat -80px -83px;
+}
+#Ed_product .center ul li.product3 span{
+	background: url(../images/spirit.png) no-repeat -160px -83px;
+}
+#Ed_product .center ul li.product3{
+	margin-right: 0;
+}
+#Ed_product .center ul li h3{
+	font-size: 22px;
+	font-weight: normal;
+	padding-bottom: 15px;
+}
+#Ed_product .center ul li p{
+	font-size: 14px;
+	line-height: 24px;
+	color: #666;
+	padding-bottom: 29px;
+	word-break: break-all;
+	white-space: pre; 
+	word-wrap: break-word;
+}
+#Ed_product .center ul li a{
+	font-size: 14px;
+	color: #39a030;
+}
+#Ed_product .center ul li a:hover{
+	text-decoration: underline;
+}
+/*工作环境照片*/
+#Ed_workplace{
+	padding-top: 2px;
+	background-color: #f8f8f8;
+	height: 220px;
+	width: 1616px;
+	overflow: hidden;
+}
+#Ed_workplace ul{
+	width: 150%;
+}
+#Ed_workplace ul li+li{
+	padding-left: 4px;
+}
+/*具体课程内容部分*/
+#Ed_content{
+	width: 1616px;
+	height: 1470px;
+	padding-top: 81px;
+	background-color: #f8f8f8;
+}
+#Ed_content .center{
+	width: 1206px;
+	height: 100%;
+}
+/*产品设计、编程语言产品部分*/
+#Ed_content .center .course{
+	width: 980px;
+	height: 100%;
+	position: relative;
+}
+/*产品设计、编程语言产品导航栏*/
+#Ed_content .center .course .course-tab{
+	padding-left: 1px;
+}
+#Ed_content .center .course .course-tab li{
+	width: 200px;
+	height: 50px;
+	background-color: #fff;
+	font-size: 20px;
+	color: #666;
+	line-height: 50px;
+	text-align: center;
+}
+#Ed_content .center .course .course-tab li{
+	width: 200px;
+	height: 50px;
+	background-color: #fff;
+	font-size: 20px;
+	color: #666;
+	line-height: 50px;
+	text-align: center;
+}
+#Ed_content .center .course .course-tab li.pro-design{
+    box-shadow: -1px 0 0 #ecebeb,0 1px 1px #d4d3d3;
+}
+#Ed_content .center .course .course-tab li.pro-language{
+	box-shadow: 1px 0 0 #ecebeb,0 1px 1px #d4d3d3;
+}
+#Ed_content .center .course .course-tab li.active{
+	background-color: #39A030;
+	color: #fff;
+}
+/*产品设计、编程语言具体产品*/
+#Ed_content .show-course{
+   width: 100%;
+   margin-top: 29px;
+}
+
+/*具体产品概述部分*/
+#Ed_content .show-course li {
+   width: 223px;
+   height: 226px;
+   position: relative;
+   float: left;
+   margin: 0 20px 20px 0;
+   padding:1px;
+   box-shadow: -1px 0 0 #f1f1f1, 1px 0 0 #f1f1f1, 0 1px 1px #e6e6e6;
+}
+#Ed_content .show-course li:hover{
+   box-shadow: 0 0 0 1px #e6e6e6;
+}
+#Ed_content .show-course li .sketch{
+   width: 100%;
+   height: 100%;
+   background-color: #fff;
+}
+#Ed_content .show-course li .sketch img{
+	width: 223px;
+	height: 124px;
+}
+
+#Ed_content .show-course li .sketch h4{
+	font-size: 12px;
+	line-height: 12px;
+	color：#333333;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 8px 0 10px 5px;
+}
+#Ed_content .show-course li:hover .sketch h4{
+	color: #39a030;
+}
+#Ed_content .show-course li .sketch .author{
+	font-size: 12px;
+	line-height: 12px;
+	color: #999;
+	margin:0 0 10px 5px;
+}
+#Ed_content .show-course li .sketch span{
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	color: #999;
+	line-height: 16px;
+	margin-left:5px;
+	padding:0 4px 0 16px;
+	font-size: 8px;
+	position: relative;
+}
+#Ed_content .show-course li .sketch span i{
+	position: absolute;
+	top: 2px;
+	left: 3px;
+	width: 9px;
+	height: 11px;
+	background: url(../images/spirit.png) no-repeat -38px -23px;
+}
+#Ed_content .show-course li .sketch .price{
+	margin: 10px 0 0 5px;
+	font-size: 12px;
+}
+#Ed_content .show-course li .sketch .price em{
+	color: #FF3F00;
+	font-weight: bold;
+}
+/*鼠标以上来时产品具体内容展开部分*/
+#Ed_content .show-course li .details{
+	display:none;
+}
+#Ed_content .show-course li .details img{
+	width: 223px;
+	height: 124px;
+}
+#Ed_content .show-course li:hover .details{
+	display: block;
+	position: absolute; 
+	top: -10px; 
+	left: -10px;
+	width: 480px; 
+	min-height: 250px;
+	background: #fff; 
+	box-shadow: 0 0 2px 1px #d3d1d2; 
+	z-index: 99;
+	background-color: #f8f8f8;
+}
+#Ed_content .show-course li .details .top
+{
+	padding:11px 11px 17px 11px;
+	background-color: #fff;
+}
+#Ed_content .show-course li .details .bottom{
+	margin-top: 9px;
+}
+#Ed_content .show-course li .details img{ 
+	float:left;
+}
+#Ed_content .show-course li .details h3{ 
+	font:20px/26px 'Microsoft YaHei'; 
+	margin:0 10px 12px 243px; 
+	color:#333; 
+}
+#Ed_content .show-course li .details span{ 
+	font:12px/12px 'Microsoft YaHei'; 
+    border:none; background:url(../images/spirit.png) no-repeat -35px -20px; 
+    color:#666; 
+    padding: 0 4px 0 18px;
+    margin-left: 15px;
+}
+#Ed_content .show-course li .details .classfiry{ 
+	height:40px; 
+	font:12px/20px 'Microsoft YaHei'; 
+	padding:10px 0 0 243px;
+	color:#666;
+}
+#Ed_content .show-course li .details .description{ 
+	clear: both; 
+	width: 425px;
+    font: 14px/24px 'Microsoft YaHei';
+    padding-left: 21px;
+}
+
+/*具体课程展示页码*/
+#Ed_content .center .course .page-number{
+	position: absolute;
+	right: 19px;
+	bottom: 120px;
+}
+#Ed_content .center .course .page-number li{
+	height: 20px;
+	width: 20px;
+	color: #666;
+	margin-right: 8px;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+}
+#Ed_content .center .course .page-number li.active{
+	color: #39a030;
+}
+#Ed_content .center .course .page-number li:hover{
+	background-color: #9dd8b1;
+	color: #fff;
+}
+#Ed_content .center .course .page-number li.prev{
+	width: 30px;
+	margin-right: 12px;
+	background: #9dd8b1 url(../images/spirit.png) no-repeat -263px -123px;
+}
+#Ed_content .center .course .page-number li.next{
+	width: 30px;
+	margin:0 0 0 4px;
+	background: #9dd8b1 url(../images/spirit.png) no-repeat -263px -143px;
+}
+
+/*具体内容右边栏*/
+#Ed_content .center .about-more{
+	width: 223px;
+	height: 100%;
+	padding-top:3px;
+}
+/*机构介绍*/
+#Ed_content .center .about-more .org-introduce{
+	width: 223px;
+	height: 229px;
+	background-color: #fff;
+	box-shadow: -1px 0 0 #ecebeb, 1px 0 0 #ecebeb, 0 1px 1px #d4d3d3;
+}
+#Ed_content .center .about-more .org-introduce h4{
+	font-size: 16px;
+	padding-left: 20px;
+	line-height: 55px;
+	color: #333;
+	border-bottom: 1px solid #ddd;
+}
+/*机构介绍视频*/
+#Ed_content .center .about-more .org-introduce .video{
+	padding: 20px 0 0 22px;
+}
+#Ed_content .center .about-more .org-introduce .video p{
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 9px;
+}
+#Ed_content .center .about-more .org-introduce .video #trigger_play{
+	position:relative;
+	height: 110px;
+	width: 180px;
+}
+#Ed_content .center .about-more .org-introduce .video #trigger_play .play{
+	position:absolute;
+	width: 46px;
+	height: 46px;
+	top: 50%;
+	left: 50%;
+	margin: -23px 0 0 -23px;
+	background: url(../images/play.png) no-repeat 0 0;
+}
+#Ed_content .center .about-more .org-introduce .video .popup{
+	width: 950px;
+	height: 678px;
+	background:#fff; 
+	position:fixed;
+	left:50%;
+	top:50%; 
+	margin:-338px 0 0 -475px; 
+	z-index:901;
+	display:none;
+}
+#Ed_content .center .about-more .org-introduce .video .popup p{
+	padding-top: 29px;
+	margin:0 30px; 
+	font:bold 18px 'Microsoft YaHei';
+}
+#Ed_content .center .about-more .org-introduce .video .popup video{
+	margin:0 30px;
+}
+#Ed_content .center .about-more .org-introduce .video .popup video .reminder{
+	font:bold 60px/120px "Microsoft YaHei";
+	text-align:center;
+	color:#e1e1e1;
+	padding-top:179px;
+
+}
+#Ed_content .center .about-more .org-introduce .video .popup .close{
+	 width:20px; 
+	 height:20px; 
+	 position:absolute; 
+	 top:0; 
+	 right:0;
+	 background:url(../images/spirit.png) no-repeat -18px 0;
+}
+/*课程热门排行*/
+#Ed_content .center .about-more .hot-course{
+	width: 223px;
+	height: 778px;
+	background-color: #fff;
+	margin-top:21px;
+	box-shadow: -1px 0 0 #ecebeb, 1px 0 0 #ecebeb, 0 1px 1px #d4d3d3;
+}
+#Ed_content .center .about-more .hot-course h4{
+	font-size: 16px;
+	line-height: 56px;
+	padding-left: 20px;
+	color: #333;
+	border-bottom: 1px solid #ddd;
+}
+#Ed_content .center .about-more .hot-course .course-list{
+	padding: 19px 0 0 20px;
+	height: 682px;
+	overflow: hidden;
+	position: relative;
+}
+#Ed_content .center .about-more .hot-course .course-list ul{
+	position: absolute;
+	left: 20px;
+	top: 19px;
+}
+#Ed_content .center .about-more .hot-course .course-list li{
+	margin-bottom: 20px;
+	width: 190px;	
+}
+#Ed_content .center .about-more .hot-course .course-list li .pic{
+	margin-right: 12px;	
+}
+#Ed_content .center .about-more .hot-course .course-list li .pic a{
+	display:block;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+}
+#Ed_content .center .about-more .hot-course .course-list li .pic img{
+	position:absolute;
+	left: -19px;
+	height: 50px;
+}
+#Ed_content .center .about-more .hot-course .course-list li .text a{
+	display: block;
+	width: 128px;
+	font-size: 14px;
+	color: #333;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-bottom: 12px;
+}
+#Ed_content .center .about-more .hot-course .course-list li .text p{
+	color: #999;
+	font-size: 10px;
+	padding-left: 16px;
+	position: relative;
+}
+#Ed_content .center .about-more .hot-course .course-list li .text p span{
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 9px;
+	height: 11px;
+	background: url(../images/spirit.png) no-repeat -38px -23px;
+}
+/*页面底部*/
+#Ed_footer{
+	height: 262px;
+	width: 1360px;
+	background-color: #2c3339;
+	padding-left: 256px;
+	font-style: "Microsoft YaHei";
+}
+#Ed_footer .EDU-logo{
+	padding-top: 95px;
+}
+#Ed_footer .EDU-logo h2{
+	padding: 0 31px 0 84px;
+	font-size: 22px;
+	background: url(../images/spirit.png) no-repeat -223px 0;
+	color: #39a030;
+	font-weight: normal;
+	margin-bottom: 22px;
+}
+#Ed_footer .EDU-logo p{
+	font:12.5px/25px 'Microsoft YaHei';
+	opacity: 0.6;
+	color: #fff;
+}
+#Ed_footer .more-link{
+	padding-top: 82px;
+	margin-right: 413px;
+}
+#Ed_footer .more-link ul{
+	color: #fff;
+	font-size: 12px;
+	opacity: 0.6;
+}
+#Ed_footer .more-link ul.yqlj{
+	width: 210px;
+}
+#Ed_footer .more-link ul.wm{
+	width: 134px;
+	position: relative;
+}
+#Ed_footer .more-link ul.wm li span{
+	position: absolute;
+	left: 38px;
+	top: 89px;
+	width: 20px;
+	height: 16px;
+	background: url(../images/spirit.png) -198px -17px;
+}
+#Ed_footer .more-link li a{
+	display: block;
+	color: #fff;
+	font-size: 14px;
+	padding-top: 15px;
+}
+#Ed_footer .more-link li a:hover{
+	text-decoration: underline;
+}
